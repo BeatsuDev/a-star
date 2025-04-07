@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "time": "bun run ./testing-and-timing/timing.ts"
+    "time": "bun run ./testing-and-timing/timing.ts",
+    "decompress": "bun ./compressor.ts --decompress"
   },
   "devDependencies": {
     "@types/bun": "latest"
