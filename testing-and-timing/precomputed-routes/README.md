@@ -1,0 +1,2 @@
+These precomputed routes contain every NODE that is traversed in the shortest path from one node to another.
+It does NOT specify the edges, though these could theoretically be found from the given nodes.
