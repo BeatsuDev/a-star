@@ -26,8 +26,9 @@ export async function loadNodes(path: string): Promise<NodeMap> {
             throw new Error(`Missing node data in ${path}`);
         }
 
-        const data = line.split(" ");
+        const data = line.split(" ").filter(Boolean);
         if (data.length !== 3 || data[0] == undefined || data[1] == undefined || data[2] == undefined) {
+            console.log(line);
             throw new Error(`Invalid node data in ${path} at line: ${i}`);
         }
 
@@ -61,7 +62,7 @@ export async function loadEdges(path: string): Promise<EdgeMap> {
     const edgeMap: EdgeMap = new Map<NodeId, Edge[]>();
 
     for (let i = 0; i < edgeCount; i++) {
-        const line = otherLines[i++];
+        const line = otherLines[i];
 
         if (line === undefined) {
             throw new Error(`Missing edge data in ${path}`);
